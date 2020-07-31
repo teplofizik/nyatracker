@@ -11,16 +11,15 @@
 
 namespace NyaTracker {
 
-	// Base class of trackers
+	// Базовый класс для трекеров
 	// Tracker:
-	//   SimpleTracker => generate map/field of vectors, autocalc projection translation
-	//   MapTracker
+	//   SimpleTracker => слабенький трекер для построения поля векторов типичных перемещений в кадре, автонастройки матрицы проекции и т.д.
 	class Tracker {
 		
 	public:
-		// Process detected objects to tracked objects
-		// in: detected objects
-		// out: tracked objects
+		// Трекируем объекты
+		// in:  детектируемые объекты
+		// out: трекированные объекты
 		virtual std::vector<std::shared_ptr<Object>> Process(std::vector<std::shared_ptr<Object>> objects) = 0;
 	};
 	
